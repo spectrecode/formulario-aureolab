@@ -7,10 +7,12 @@ phone.addEventListener('input',function(){
 $('#submitCompany').click(function(){
   $('.company').hide();
   $('.thanks').fadeIn();
+  $('.box-button').addClass("active");
 });
 $('#submitPerson').click(function(){
   $('.person').hide();
   $('.thanks').fadeIn();
+  $('.box-button').addClass("active");
 });
 
 // validacion
