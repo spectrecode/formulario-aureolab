@@ -1,0 +1,24 @@
+section
+    .container
+        .steps
+            .bar
+            .circle_steps
+                a(href="../index.html").box-button.active
+                    .circle 1
+                a(href="../persona-natural.html").box-button.active
+                    .circle 2
+                .box-button
+                    .circle 3
+        .person
+            form
+                form(action="" id="person")
+                input.campo(placeholder="Nombre" type="text" name="nombre" id="nombre" minlength="2" required)
+                input.campo(placeholder="Número" type="number" name="phone" id="phone" max="999999999" required)
+                input.campo(placeholder="E-mail" type="email" name="email" id="email" required)
+                input.campo(placeholder="Presupuesto estimado" type="text" name="estimate" id="estimate" required)
+                textarea.campo(placeholder="Cuentanos tus requerimientos" name="comment" id="comment", cols="30", rows="10" required)
+                .form-buttons
+                    a.back(href="../index.html") Atrás
+                    a.submit(href="javascript:void(0)")#submitPerson Enviar
+                #error
+        

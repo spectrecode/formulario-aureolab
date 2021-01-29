@@ -1,0 +1,15 @@
+header{
+  background-color: $black;
+  height: 100px;
+  nav{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .texto-bienvenida{
+      display: none;
+      color: $white;
+      font-size: 33px;
+    }
+  }
+}

@@ -1,0 +1,1 @@
+var phone=document.getElementById("phone");phone.addEventListener("input",function(){9<this.value.length&&(this.value=this.value.slice(0,9))}),$("#submitCompany").click(function(){$(".company").hide(),$(".thanks").fadeIn()}),$("#submitPerson").click(function(){$(".person").hide(),$(".thanks").fadeIn()});

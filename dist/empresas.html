@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <title>Document</title>
+  </head>
+  <body class="body">
+    <header>
+      <nav><img src="../img/logo.png" alt=""/>
+        <div class="texto-bienvenida">¡Gracias por tu interés en Aureolab!</div>
+      </nav>
+    </header>
+    <section>
+      <div class="container">
+        <div class="steps">
+          <div class="bar"></div>
+          <div class="circle_steps"><a class="box-button active" href="../index.html">
+              <div class="circle">1</div></a><a class="box-button active" href="../empresas.html">
+              <div class="circle">2</div></a>
+            <div class="box-button">
+              <div class="circle">3</div>
+            </div>
+          </div>
+        </div>
+        <div class="company">
+          <form action="" id="company">
+            <input class="campo" placeholder="Nombre de la empresa" type="text" name="nombre" id="nombre" minlength="2" required="required"/>
+            <input class="campo" placeholder="Número de contacto" type="number" name="phone" id="phone" max="999999999" required="required"/>
+            <input class="campo" placeholder="E-mail corporativo" type="email" name="email" id="email" required="required"/>
+            <input class="campo" placeholder="Número de colaboradores" type="number" name="number" id="numero" required="required"/>
+            <input class="campo" placeholder="Presupuesto estimado" type="text" name="estimate" id="estimate" required="required"/>
+            <textarea class="campo" placeholder="Cuentanos tus requerimientos" name="comment" id="comment" cols="30" rows="10" required="required"></textarea>
+            <div class="form-buttons"><a class="back" href="../index.html">Atrás</a><a class="submit" href="javascript:void(0)" id="submitCompany">Enviar</a></div>
+            <div id="error"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+    <section class="thanks">
+      <div class="message">
+        <div class="gracias">¡Gracias!</div>
+        <p>En breve te contactaremos</p>
+      </div>
+    </section>
+    <footer>
+      <div class="logo"><img src="../img/aureolab-logo-solo-negro.svg" alt=""/>
+        <p>2021 Copyright © 2021</p>
+      </div>
+    </footer>
+  </body>
+  <script src="js/plugins/jquery-3.4.1.min.js"></script>
+  <script src="js/app.js"></script>
+</html>

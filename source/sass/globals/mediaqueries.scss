@@ -1,0 +1,69 @@
+
+@media only screen and (min-width:769px){
+    header{
+        height: 90px;
+        nav{
+            width: 80%;
+            margin: auto;
+            justify-content: space-between;
+            .texto-bienvenida{
+                display: block;
+            }
+        }
+    }
+    section{
+        padding-bottom: 70px;
+        padding-top: 40px;
+        .steps{
+            .circle_steps{
+                .box-button{
+                    .circle{
+                        height: 58px;
+                        width: 58px;
+                        line-height: 2.4;
+                    }
+                }
+            }
+        }
+        .type {
+            p{
+                font-size: 36px;
+            }
+            a{
+                height: 90px;
+                margin: 40px 0;
+                font-size: 24px;
+            }
+        }
+        .campo, textarea, .back, .submit{
+            height: 80px;
+            font-size: 26px;
+            padding: 15px 25px;
+            &.back, &.submit{
+                width: 345px;
+            }
+            &.back, &.submit{
+                line-height: 1.6;
+            }
+        }
+        textarea{
+            height: 170px;
+        }
+        .form-buttons{
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+    footer{
+        height: 90px;
+        .logo{
+            flex-direction: row;
+            width: 80%;
+            margin: auto;
+            justify-content: flex-start;
+            p{
+                margin-left: 40px;
+            }
+        }
+    }
+}
