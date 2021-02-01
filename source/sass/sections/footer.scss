@@ -1,5 +1,6 @@
 footer{
-    flex-grow: 1;
+    flex: 0;
+    align-self: flex-end;
     background-color: $yellow;
     height: 100px;
     width: 100%;

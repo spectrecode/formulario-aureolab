@@ -1,13 +1,13 @@
 section{
     padding-top: 70px;
     padding-bottom: 50px;
-    height: 100vh;
+    flex: 3;
     .steps{
         position: relative;
         width: 80%;
         min-width: 200px;
         margin: auto;
-        padding-bottom: 40px;
+        padding-bottom: 60px;
         .circle{
             background-color: $grey;
         }
@@ -120,9 +120,10 @@ section{
         .gracias{
             font-family: $extraBold;
             margin-bottom: 20px;
+            font-size: 34px;
         }
         p{
-            font-size: 20px;
+            font-size: 30px;
         }
     }
 }
