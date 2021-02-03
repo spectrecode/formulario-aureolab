@@ -64,7 +64,6 @@ $().ready(function() {
   });
 });
 
-
 $.validator.setDefaults({
   submitHandler: function() {
     thanks();
