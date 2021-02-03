@@ -8759,18 +8759,22 @@ header nav {
           align-items: center;
 }
 
-header nav .texto-bienvenida {
-  display: none;
-  color: #fff;
-  font-size: 33px;
-}
-
 section {
-  padding-top: 70px;
+  padding-top: 30px;
   padding-bottom: 50px;
   -webkit-box-flex: 3;
       -ms-flex: 3;
           flex: 3;
+}
+
+section .question {
+  text-align: center;
+  font-size: 18px;
+}
+
+section .question.exito {
+  font-size: 24px;
+  font-family: "open_sansbold";
 }
 
 section .steps {
@@ -8778,11 +8782,13 @@ section .steps {
   width: 80%;
   min-width: 200px;
   margin: auto;
-  padding-bottom: 60px;
+  padding-top: 35px;
+  padding-bottom: 10px;
 }
 
 section .steps .circle {
-  background-color: #C4C4C4;
+  background-color: #E5E5E5;
+  color: #9D9D9D;
 }
 
 section .steps .circle_steps {
@@ -8792,6 +8798,9 @@ section .steps .circle_steps {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
 section .steps .circle_steps .box-button {
@@ -8799,23 +8808,31 @@ section .steps .circle_steps .box-button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   position: relative;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
 }
 
 section .steps .circle_steps .box-button .circle {
   height: 48px;
   width: 48px;
   border-radius: 100%;
-  text-align: center;
   font-family: "open_sansbold";
-  line-height: 2;
+  line-height: 2.7;
   z-index: 1;
+}
+
+section .steps .circle_steps .box-button span {
+  display: none;
 }
 
 section .steps .circle_steps .box-button::before {
@@ -8823,16 +8840,18 @@ section .steps .circle_steps .box-button::before {
   position: absolute;
   width: 100%;
   height: 6px;
-  top: 0;
-  bottom: 0;
-  margin: auto;
+  top: 25px;
   left: -50%;
   background-color: #C4C4C4;
 }
 
+section .steps .circle_steps .box-button.active span {
+  color: #FED136;
+}
+
 section .steps .circle_steps .box-button.active .circle {
   background-color: #FED136;
-  color: #3E3E3E;
+  color: #161B1E;
 }
 
 section .steps .circle_steps .box-button.active::before {
@@ -8843,13 +8862,19 @@ section .steps .circle_steps > :first-child::before {
   display: none;
 }
 
+section .type {
+  padding-top: 30px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
 section .type p {
   color: #fff;
   font-size: 20px;
 }
 
 section .type a {
-  font-size: 20px;
+  font-size: 16px;
   color: #FED136;
   font-family: "open_sanssemibold";
   display: -webkit-box;
@@ -8861,14 +8886,18 @@ section .type a {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  height: 70px;
+  height: 60px;
   border: 3px solid #FED136;
   border-radius: 10px;
   margin: 20px 0;
-  padding-left: 25px;
-  padding-right: 25px;
+  padding-left: 15px;
+  padding-right: 15px;
   -webkit-transition: 0.3s;
   transition: 0.3s;
+}
+
+section .type a i {
+  color: #FED136;
 }
 
 section .type a:hover {
@@ -8876,58 +8905,177 @@ section .type a:hover {
   color: #161B1E;
 }
 
-section .campo, section textarea, section .back, section .submit {
-  height: 50px;
-  padding: 15px;
-  width: 100%;
+section form {
+  padding: 0 15px 0;
+}
+
+section form .informacion {
+  padding-top: 35px;
+}
+
+section form .ud {
+  font-size: 20px;
+  font-family: "open_sanssemibold";
+}
+
+section form .campo {
+  padding-top: 10px;
+}
+
+section form .campo label, section form .campo p {
   font-size: 16px;
+  position: relative;
+}
+
+section form .campo label span, section form .campo p span {
+  color: #ED3A4E;
+}
+
+section form .campo p {
+  padding-bottom: 8px;
+}
+
+section form .campo .check {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+section form .campo .check input[type="radio"]:checked,
+section form .campo .check input[type="radio"]:not(:checked) {
+  position: absolute;
+  left: -9999px;
+}
+
+section form .campo .check input[type="radio"]:checked + label,
+section form .campo .check input[type="radio"]:not(:checked) + label {
+  position: relative;
+  padding-left: 40px;
+  padding-top: 2px;
+  cursor: pointer;
+}
+
+section form .campo .check input[type="radio"]:checked + label:before,
+section form .campo .check input[type="radio"]:not(:checked) + label:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 25px;
+  height: 25px;
+  border-radius: 100%;
+  background: #fff;
+}
+
+section form .campo .check input[type="radio"]:checked + label:before {
+  background-color: #FED136;
+}
+
+section form .campo .check input[type="radio"]:checked + label:after,
+section form .campo .check input[type="radio"]:not(:checked) + label:after {
+  content: '';
+  width: 14px;
+  height: 14px;
+  background: #161B1E;
+  position: absolute;
+  top: 5.5px;
+  left: 5.5px;
+  border-radius: 100%;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+section form .campo .check input[type="radio"]:not(:checked) + label:after {
+  opacity: 0;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+
+section form .campo .check input[type="radio"]:checked + label:after {
+  opacity: 1;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+section form .campo .check .error + label::before {
+  border: 3px solid #ED3A4E;
+}
+
+section form .campo input, section form .campo textarea {
   border-radius: 10px;
+  margin-top: 5px;
+  padding: 15px;
+  color: #161B1E;
+  display: block;
+  font-size: 16px;
+  width: 100%;
+}
+
+section form .campo input::-webkit-input-placeholder, section form .campo textarea::-webkit-input-placeholder {
+  color: #C4C4C4;
+}
+
+section form .campo input::-moz-placeholder, section form .campo textarea::-moz-placeholder {
+  color: #C4C4C4;
+}
+
+section form .campo input:-ms-input-placeholder, section form .campo textarea:-ms-input-placeholder {
+  color: #C4C4C4;
+}
+
+section form .campo input::-ms-input-placeholder, section form .campo textarea::-ms-input-placeholder {
+  color: #C4C4C4;
+}
+
+section form .campo input::placeholder, section form .campo textarea::placeholder {
+  color: #C4C4C4;
+}
+
+section form .campo input.error, section form .campo textarea.error {
+  border: 3.5px solid #ED3A4E;
+}
+
+section form .campo input {
+  height: 50px;
+}
+
+section form .item-required {
+  font-size: 12px;
   margin-top: 10px;
 }
 
-section .campo::-webkit-input-placeholder, section textarea::-webkit-input-placeholder, section .back::-webkit-input-placeholder, section .submit::-webkit-input-placeholder {
-  color: #C4C4C4;
+section form .item-required span {
+  font-size: 12px;
+  color: #ED3A4E;
 }
 
-section .campo::-moz-placeholder, section textarea::-moz-placeholder, section .back::-moz-placeholder, section .submit::-moz-placeholder {
-  color: #C4C4C4;
+section form .item-required.complete {
+  color: #ED3A4E;
+  display: none;
 }
 
-section .campo:-ms-input-placeholder, section textarea:-ms-input-placeholder, section .back:-ms-input-placeholder, section .submit:-ms-input-placeholder {
-  color: #C4C4C4;
+section form .form-buttons {
+  padding-top: 10px;
 }
 
-section .campo::-ms-input-placeholder, section textarea::-ms-input-placeholder, section .back::-ms-input-placeholder, section .submit::-ms-input-placeholder {
-  color: #C4C4C4;
-}
-
-section .campo::placeholder, section textarea::placeholder, section .back::placeholder, section .submit::placeholder {
-  color: #C4C4C4;
-}
-
-section .campo.back, section .campo.submit, section textarea.back, section textarea.submit, section .back.back, section .back.submit, section .submit.back, section .submit.submit {
-  line-height: 1;
-  font-weight: bold;
-}
-
-section .campo.back, section textarea.back, section .back.back, section .submit.back {
-  background-color: #161B1E;
-  color: #FED136;
+section form .form-buttons a, section form .form-buttons .submit {
+  width: 100%;
+  padding: 10px;
+  font-family: "open_sansbold";
   border: 3px solid #FED136;
+  border-radius: 10px;
+  margin: 10px 0;
 }
 
-section .campo.submit, section textarea.submit, section .back.submit, section .submit.submit {
-  background-color: #FED136;
-  color: #161B1E;
-}
-
-section a.back, section a.submit {
+section form .form-buttons a {
   display: block;
   text-align: center;
+  background-color: #161B1E;
+  color: #FED136;
 }
 
-section textarea {
-  height: 100px;
+section form .form-buttons .submit {
+  background-color: #FED136;
+  color: #161B1E;
 }
 
 section .message {
@@ -8935,17 +9083,19 @@ section .message {
   color: #fff;
   width: 70%;
   margin: auto;
-  padding-bottom: 50px;
+  padding-top: 20px;
+  padding-bottom: 40px;
 }
 
 section .message .gracias {
   font-family: "open_sansextrabold";
   margin-bottom: 20px;
-  font-size: 34px;
+  font-size: 32px;
 }
 
 section .message p {
-  font-size: 30px;
+  font-size: 28px;
+  line-height: 1.2;
 }
 
 .thanks {
@@ -8987,6 +9137,7 @@ footer .logo {
 footer .logo p {
   font-size: 14px;
   margin-top: 5px;
+  color: #161B1E;
 }
 
 * {
@@ -8994,8 +9145,9 @@ footer .logo p {
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-size: 24px;
+  font-size: 18px;
   font-family: "open_sansregular";
+  color: #fff;
 }
 
 .body {
@@ -9046,40 +9198,63 @@ a {
     padding-bottom: 70px;
     padding-top: 40px;
   }
+  section .question {
+    font-size: 24px;
+  }
+  section .question.exito {
+    font-size: 40px;
+    padding-bottom: 20px;
+  }
+  section .steps {
+    padding-top: 50px;
+  }
+  section .steps .circle_steps .box-button {
+    height: 130px;
+  }
   section .steps .circle_steps .box-button .circle {
-    height: 58px;
-    width: 58px;
-    line-height: 2.4;
+    height: 50px;
+    width: 50px;
+    line-height: 2.1;
+    font-size: 24px;
+  }
+  section .steps .circle_steps .box-button span {
+    padding-top: 20px;
+    color: #C4C4C4;
+    line-height: 1.2;
+    display: block;
   }
   section .type p {
-    font-size: 30px;
+    font-size: 24px;
   }
   section .type a {
     height: 90px;
     margin: 40px 0;
     font-size: 24px;
   }
-  section .campo, section textarea, section .back, section .submit {
-    height: 80px;
-    font-size: 26px;
-    padding: 15px 25px;
+  section form .ud {
+    font-size: 28px;
   }
-  section .campo.back, section .campo.submit, section textarea.back, section textarea.submit, section .back.back, section .back.submit, section .submit.back, section .submit.submit {
-    width: 345px;
+  section form .campo label, section form .campo p {
+    font-size: 20px;
   }
-  section .campo.back, section .campo.submit, section textarea.back, section textarea.submit, section .back.back, section .back.submit, section .submit.back, section .submit.submit {
-    line-height: 1.6;
+  section form .campo input, section form .campo textarea {
+    font-size: 18px;
   }
-  section textarea {
-    height: 170px;
+  section form .campo input {
+    height: 65px;
   }
-  section .form-buttons {
+  section form .form-buttons {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
+  }
+  section form .form-buttons a, section form .form-buttons .submit {
+    width: 330px;
+    height: 65px;
+    line-height: 2;
   }
   footer {
     height: 90px;

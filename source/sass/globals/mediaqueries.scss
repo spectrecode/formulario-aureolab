@@ -14,20 +14,36 @@
     section{
         padding-bottom: 70px;
         padding-top: 40px;
+        .question{
+            font-size: 24px;
+            &.exito{
+                font-size: 40px;
+                padding-bottom: 20px;
+            }
+        }
         .steps{
+            padding-top: 50px;
             .circle_steps{
                 .box-button{
+                    height: 130px;
                     .circle{
-                        height: 58px;
-                        width: 58px;
-                        line-height: 2.4;
+                        height: 50px;
+                        width: 50px;
+                        line-height: 2.1;
+                        font-size: 24px;
+                    }
+                    span{
+                        padding-top: 20px;
+                        color: $grey;
+                        line-height: 1.2;
+                        display: block;
                     }
                 }
             }
         }
         .type {
             p{
-                font-size: 30px;
+                font-size: 24px;
             }
             a{
                 height: 90px;
@@ -35,23 +51,31 @@
                 font-size: 24px;
             }
         }
-        .campo, textarea, .back, .submit{
-            height: 80px;
-            font-size: 26px;
-            padding: 15px 25px;
-            &.back, &.submit{
-                width: 345px;
+        form{
+            .ud{
+                font-size: 28px;
             }
-            &.back, &.submit{
-                line-height: 1.6;
+            .campo{
+                label, p{
+                    font-size: 20px;
+                }
+                input, textarea{
+                    font-size: 18px;
+                }
+                input{
+                    height: 65px;
+                }
             }
-        }
-        textarea{
-            height: 170px;
-        }
-        .form-buttons{
-            display: flex;
-            justify-content: space-between;
+            .form-buttons{
+                display: flex;
+                justify-content: space-between;
+                a, .submit{
+                    width: 330px;
+                    height: 65px;
+                    line-height: 2;
+                }
+                
+            }
         }
     }
     footer{

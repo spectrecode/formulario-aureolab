@@ -1,57 +1,114 @@
 var phone=  document.getElementById('phone');
 phone.addEventListener('input',function(){
-  if (this.value.length > 9)
-     this.value = this.value.slice(0,9);
+  if (this.value.length > 11)
+     this.value = this.value.slice(0,11);
 })
 
-$('#submitCompany').click(function(){
-  $('.company').hide();
+function thanks(){
+  $('.business').hide();
   $('.thanks').fadeIn();
   $('.box-button').addClass("active");
-});
-$('#submitPerson').click(function(){
-  $('.person').hide();
-  $('.thanks').fadeIn();
-  $('.box-button').addClass("active");
-});
+  $('.question').text('¡Solicitud enviada con éxito!').addClass('exito');
+}
 
 // validacion
 
-// $('#submitCompany').click(function(){
-//   var nombre = $("#nombre").val();
-//   var phone = $("#phone").val();
-//   var email = $("#email").val();
-//   var numero = $("#numero").val();
-//   var estimate = $("#estimate").val();
-//   var comment = $("#comment").val();
-//   if(nombre === ""){
-//     $("#nombre").addClass("class-error")
-//     }else{
-//       $("#nombre").removeClass("class-error")
-//   }
-//   if(phone === ""){
-//     $("#phone").addClass("class-error")
-//     }else{
-//       $("#phone").removeClass("class-error")
-//   }
-//   if(email === ""){
-//     $("#email").addClass("class-error")
-//     }else{
-//       $("#email").removeClass("class-error")
-//   }
-//   if(numero === ""){
-//     $("#numero").addClass("class-error")
-//     }else{
-//       $("#numero").removeClass("class-error")
-//   }
-//   if(estimate === ""){
-//     $("#estimate").addClass("class-error")
-//     }else{
-//       $("#estimate").removeClass("class-error")
-//   }
-//   if(comment === ""){
-//     $("#comment").addClass("class-error")
-//     }else{
-//       $("#comment").removeClass("class-error")
-//   }
-// });
+$.validator.setDefaults({
+  submitHandler: function() {
+    thanks();
+  }
+});
+$().ready(function() {
+  $("#company").validate({
+    errorPlacement: function(error, element) {
+			$( element )
+				.closest( "form" )
+					.find( "label[for='" + element.attr( "id" ) + "']" )
+            .append( error );
+      $(".complete").show();
+		},
+    rules: {
+      nombre: "required",
+      phone: "required",
+      empresa: "required",
+      detalles: "required",
+      nombre: {
+        required: true,
+        minlength: 2
+      },
+      phone: {
+        required: true,
+        minlength: 11
+      },
+      email: {
+        required: true,
+        email: true
+      },
+      detalles: {
+        required: true,
+        minlength: 2
+      }
+    },
+    messages: {
+      nombre: {
+        required: "",
+        minlength: ""
+      },
+      phone: "",
+      email: "",
+      empresa: "",
+      employees: "",
+      detalles: "",
+      presupuesto: "",
+    }
+  });
+});
+
+
+$.validator.setDefaults({
+  submitHandler: function() {
+    thanks();
+  }
+});
+$().ready(function() {
+  $("#person").validate({
+    errorPlacement: function(error, element) {
+			$( element )
+				.closest( "form" )
+					.find( "label[for='" + element.attr( "id" ) + "']" )
+            .append( error );
+      $(".complete").show();
+		},
+    rules: {
+      nombre: "required",
+      phone: "required",
+      detalles: "required",
+      nombre: {
+        required: true,
+        minlength: 2
+      },
+      phone: {
+        required: true,
+        minlength: 11
+      },
+      email: {
+        required: true,
+        email: true
+      },
+      detalles: {
+        required: true,
+        minlength: 2
+      }
+    },
+    messages: {
+      nombre: {
+        required: "",
+        minlength: ""
+      },
+      phone: "",
+      email: "",
+      detalles: "",
+      presupuesto: "",
+    }
+  });
+});

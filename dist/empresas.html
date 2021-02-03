@@ -10,31 +10,93 @@
   </head>
   <body class="body">
     <header>
-      <nav><img src="img/logo.png" alt=""/>
-        <div class="texto-bienvenida">¡Gracias por tu interés en Aureolab!</div>
-      </nav>
+      <nav><img src="img/logo.png" alt=""/></nav>
     </header>
     <section>
       <div class="container">
+        <div class="question">Unas breves preguntas para cotizar tu desarrollo</div>
         <div class="steps">
           <div class="bar"></div>
           <div class="circle_steps"><a class="box-button active" href="index.html">
-              <div class="circle">1</div></a><a class="box-button active" href="empresas.html">
-              <div class="circle">2</div></a>
+              <div class="circle">1</div><span>Tipo de negocio</span></a><a class="box-button active" href="empresas.html">
+              <div class="circle">2</div><span>Información del solicitante</span></a>
             <div class="box-button">
-              <div class="circle">3</div>
+              <div class="circle">3</div><span>Confirmación</span>
             </div>
           </div>
         </div>
-        <div class="company">
+        <div class="business">
           <form action="" id="company">
-            <input class="campo" placeholder="Nombre de la empresa" type="text" name="nombre" id="nombre" minlength="2" required="required"/>
-            <input class="campo" placeholder="Número de contacto" type="number" name="phone" id="phone" max="999999999" required="required"/>
-            <input class="campo" placeholder="E-mail corporativo" type="email" name="email" id="email" required="required"/>
-            <input class="campo" placeholder="Número de colaboradores" type="number" name="number" id="numero" required="required"/>
-            <input class="campo" placeholder="Presupuesto estimado" type="text" name="estimate" id="estimate" required="required"/>
-            <textarea class="campo" placeholder="Cuentanos tus requerimientos" name="comment" id="comment" cols="30" rows="10" required="required"></textarea>
-            <div class="form-buttons"><a class="back" href="index.html">Atrás</a><a class="submit" href="javascript:void(0)" id="submitCompany">Enviar</a></div>
+            <div class="informacion">
+              <div class="ud">Información del solicitante</div>
+              <div class="campo">
+                <label for="nombre">Nombres y apellidos <span>*</span></label>
+                <input placeholder="Ej: Pablo Marmol" type="text" name="nombre" id="nombre" minlength="2" required="required"/>
+              </div>
+              <div class="campo">
+                <label for="email">Correo electrónico corporativo <span>*</span></label>
+                <input placeholder="Ej: pablo@mail.com" type="email" name="email" id="email" required="required"/>
+              </div>
+              <div class="campo">
+                <label for="phone">Número de teléfono y/o celular <span>*</span></label>
+                <input placeholder="Ej: 56987654321" type="number" name="phone" id="phone" required="required"/>
+              </div>
+            </div>
+            <div class="informacion">
+              <div class="ud">Información de la empresa</div>
+              <div class="campo">
+                <label for="empresa">Nombre de la empresa u organización <span>*</span></label>
+                <input placeholder="Ingresa el nombre de la empresa u organización" type="text" name="empresa" id="empresa" minlength="2" required="required"/>
+              </div>
+              <div class="campo">
+                <p>Número de colaboradores <span>*</span></p>
+                <div class="check">
+                  <input type="radio" name="employees" id="hasta10" required="required"/>
+                  <label for="hasta10">1 - 10 colaboradores</label>
+                </div>
+                <div class="check">
+                  <input type="radio" name="employees" id="hasta50"/>
+                  <label for="hasta50">10 - 50 colaboradores</label>
+                </div>
+                <div class="check">
+                  <input type="radio" name="employees" id="masDe50"/>
+                  <label for="masDe50">1 - 10 colaboradores</label>
+                </div>
+              </div>
+            </div>
+            <div class="informacion">
+              <div class="ud">Sobre tu proyecto</div>
+              <div class="campo">
+                <p>Presupuesto estimado <span>*</span></p>
+                <div class="check">
+                  <input type="radio" name="presupuesto" id="hasta200" required="required"/>
+                  <label for="hasta200">menos de 200 UF</label>
+                </div>
+                <div class="check">
+                  <input type="radio" name="presupuesto" id="hasta400"/>
+                  <label for="hasta400">200 a 400 UF</label>
+                </div>
+                <div class="check">
+                  <input type="radio" name="presupuesto" id="mas400"/>
+                  <label for="mas400">más de 400 UF</label>
+                </div>
+              </div>
+              <div class="campo">
+                <label for="detalles">Por favor, detalla tus requerimientos de desarrollo <span>*</span></label>
+                <textarea placeholder="Ej;
+¿Qué quieres desarrollar?
+¿Quieres cambiar un sistema ya implementado?
+¿Cuáles son tus objetivos con el desarrollo?
+Cualquier dato o información que consideres relevante.
+
+" name="detalles" id="detalles" rows="5" required="required"></textarea>
+              </div>
+            </div>
+            <div class="item-required"><span>*</span> Campos obligatorios</div>
+            <div class="item-required complete"><span>*</span> Completar los campos resaltados</div>
+            <div class="form-buttons"><a class="back" href="index.html">Atrás</a>
+              <input class="submit" type="submit" value="Enviar" id="submitCompany"/>
+            </div>
             <div id="error"></div>
           </form>
         </div>
@@ -48,10 +110,11 @@
     </section>
     <footer>
       <div class="logo"><img src="img/aureolab-logo-solo-negro.svg" alt=""/>
-        <p>2021 Copyright © 2021</p>
+        <p>Copyright © 2021</p>
       </div>
     </footer>
   </body>
   <script src="js/plugins/jquery-3.4.1.min.js"></script>
+  <script src="js/plugins/jquery.validate.js"></script>
   <script src="js/app.js"></script>
 </html>

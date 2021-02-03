@@ -1,24 +1,67 @@
 section
     .container
+        include info
         .steps
             .bar
             .circle_steps
                 a(href="index.html").box-button.active
                     .circle 1
+                    span Tipo de negocio
                 a(href="empresas.html").box-button.active
                     .circle 2
+                    span Información del solicitante
                 .box-button
                     .circle 3
-        .company
+                    span Confirmación
+        .business
             form(action="" id="company")
-                input.campo(placeholder="Nombre de la empresa" type="text" name="nombre" id="nombre" minlength="2" required)
-                input.campo(placeholder="Número de contacto" type="number" name="phone" id="phone" max="999999999" required)
-                input.campo(placeholder="E-mail corporativo" type="email" name="email" id="email" required)
-                input.campo(placeholder="Número de colaboradores" type="number" name="number" id="numero" required)
-                input.campo(placeholder="Presupuesto estimado" type="text" name="estimate" id="estimate" required)
-                textarea.campo(placeholder="Cuentanos tus requerimientos" name="comment" id="comment", cols="30", rows="10" required)
+                .informacion
+                    .ud Información del solicitante
+                    .campo
+                        label(for="nombre") Nombres y apellidos #[span *]
+                        input(placeholder="Ej: Pablo Marmol" type="text" name="nombre" id="nombre" minlength="2" required)
+                    .campo
+                        label(for="email") Correo electrónico corporativo #[span *]
+                        input(placeholder="Ej: pablo@mail.com" type="email" name="email" id="email" required)
+                    .campo
+                        label(for="phone") Número de teléfono y/o celular #[span *]
+                        input(placeholder="Ej: 56987654321" type="number" name="phone" id="phone" required)
+                .informacion
+                    .ud Información de la empresa
+                    .campo
+                        label(for="empresa") Nombre de la empresa u organización #[span *]
+                        input(placeholder="Ingresa el nombre de la empresa u organización" type="text" name="empresa" id="empresa" minlength="2" required)
+                    .campo
+                        p Número de colaboradores #[span *]
+                        .check
+                            input(type="radio" name="employees" id="hasta10" required)
+                            label(for="hasta10") 1 - 10 colaboradores
+                        .check
+                            input(type="radio" name="employees" id="hasta50" )
+                            label(for="hasta50") 10 - 50 colaboradores
+                        .check
+                            input(type="radio" name="employees" id="masDe50" )
+                            label(for="masDe50") 1 - 10 colaboradores
+                .informacion
+                    .ud Sobre tu proyecto
+                    .campo
+                        p Presupuesto estimado #[span *]
+                        .check
+                            input(type="radio" name="presupuesto" id="hasta200" required)
+                            label(for="hasta200") menos de 200 UF
+                        .check
+                            input(type="radio" name="presupuesto" id="hasta400" )
+                            label(for="hasta400") 200 a 400 UF
+                        .check
+                            input(type="radio" name="presupuesto" id="mas400" )
+                            label(for="mas400") más de 400 UF
+                    .campo
+                        label(for="detalles") Por favor, detalla tus requerimientos de desarrollo #[span *]
+                        textarea(placeholder="Ej;\n¿Qué quieres desarrollar?\n¿Quieres cambiar un sistema ya implementado?\n¿Cuáles son tus objetivos con el desarrollo?\nCualquier dato o información que consideres relevante.\n\n" name="detalles" id="detalles" rows="5" required)
+                .item-required #[span *] Campos obligatorios
+                .item-required.complete #[span *] Completar los campos resaltados
                 .form-buttons
                     a.back(href="index.html") Atrás
-                    a.submit(href="javascript:void(0)")#submitCompany Enviar
+                    input.submit(type="submit" value="Enviar")#submitCompany
                 #error
         include thanks

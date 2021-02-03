@@ -1,49 +1,65 @@
 section{
-    padding-top: 70px;
+    padding-top: 30px;
     padding-bottom: 50px;
     flex: 3;
+    .question{
+        text-align: center;
+        font-size: 18px;
+        &.exito{
+            font-size: 24px;
+            font-family: $bold;
+        }
+    }
     .steps{
         position: relative;
         width: 80%;
         min-width: 200px;
         margin: auto;
-        padding-bottom: 60px;
+        padding-top: 35px;
+        padding-bottom: 10px;
         .circle{
-            background-color: $grey;
+            background-color: $light-grey;
+            color: $dark-grey;
         }
         .circle_steps{
             display: flex;
             justify-content: space-between;
+            align-items: flex-start;
             .box-button{
                 width: 33.33%;
                 display: flex;
-                justify-content: center;
+                justify-content: flex-start;
                 align-items: center;
                 position: relative;
+                flex-direction: column;
+                text-align: center;
                 .circle{
                     height: 48px;
                     width: 48px;
                     border-radius: 100%;
-                    text-align: center; 
                     font-family: $bold;
-                    line-height: 2;
+                    line-height: 2.7;
                     z-index: 1;
+                }
+                span{
+                    display: none;
                 }
                 &::before{
                     content: "";
                     position: absolute;
                     width: 100%;
                     height: 6px;
-                    top: 0;
-                    bottom: 0;
-                    margin: auto;
+                    top: 25px;
                     left: -50%;
                     background-color: $grey;
                 }
                 &.active{
+                    span{
+                        color: $yellow;
+                    }
                     .circle{
                         background-color: $yellow;
-                        color: $dark-grey;
+                        color: $black;
                     }
                     &::before{
                         background-color: $yellow;
@@ -56,74 +72,179 @@ section{
         }
     }
     .type{
+        padding-top: 30px;
+        padding-left: 15px;
+        padding-right: 15px;
         p{
             color: $white;
             font-size: 20px;
         }
         a{
-            font-size: 20px;
+            font-size: 16px;
             color: $yellow;
             font-family: $semiBold;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            height: 70px;
+            height: 60px;
             border: 3px solid $yellow;
             border-radius: 10px;
             margin: 20px 0;
-            padding-left: 25px;
-            padding-right: 25px;
+            padding-left: 15px;
+            padding-right: 15px;
             transition: 0.3s;
+            i{
+                color: $yellow;
+            }
             &:hover{
                 background-color: $yellow;
                 color: $black;
             }
         }
     }
-    .campo, textarea, .back, .submit{
-        height: 50px;
-        padding:15px;
-        width: 100%;
-        font-size: 16px;
-        border-radius: 10px;
-        margin-top: 10px;
-        &::placeholder{
-            color: $grey;
+    form{
+        padding: 0 15px 0;
+        .informacion{
+            padding-top: 35px;
         }
-        &.back, &.submit{
-            line-height: 1;
-            font-weight: bold;
+        .ud{
+            font-size: 20px;
+            font-family: $semiBold;
         }
-        &.back{
-            background-color: $black;
-            color: $yellow;
-            border: 3px solid $yellow;
+        .campo{
+            padding-top: 10px;
+            label, p{
+                font-size: 16px;
+                position: relative;
+                span{
+                    color: $red;
+                }
+            }
+            p{
+                padding-bottom: 8px;
+            }
+            .check{
+                padding-top: 5px;
+                padding-bottom: 5px;
+                input[type="radio"]:checked,
+                input[type="radio"]:not(:checked) {
+                    position: absolute;
+                    left: -9999px;
+                }
+                input[type="radio"]:checked + label,
+                input[type="radio"]:not(:checked) + label
+                {
+                    position: relative;
+                    padding-left: 40px;
+                    padding-top: 2px;
+                    cursor: pointer;
+                }
+                input[type="radio"]:checked + label:before,
+                input[type="radio"]:not(:checked) + label:before {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 25px;
+                    height: 25px;
+                    border-radius: 100%;
+                    background: $white;
+                }
+                input[type="radio"]:checked + label:before,{
+                    background-color: $yellow;
+                }
+                input[type="radio"]:checked + label:after,
+                input[type="radio"]:not(:checked) + label:after {
+                    content: '';
+                    width: 14px;
+                    height: 14px;
+                    background: $black;
+                    position: absolute;
+                    top: 5.5px;
+                    left: 5.5px;
+                    border-radius: 100%;
+                    transition: all 0.2s ease;
+                }
+                input[type="radio"]:not(:checked) + label:after {
+                    opacity: 0;
+                    transform: scale(0);
+                }
+                input[type="radio"]:checked + label:after {
+                    opacity: 1;
+                    transform: scale(1);
+                }
+                .error + label::before{
+                    border: 3px solid $red;
+                }
+            }
+            input, textarea{
+                border-radius: 10px;
+                margin-top: 5px;
+                padding:15px;
+                color: $black;
+                display: block;
+                font-size: 16px;
+                width: 100%;
+                &::placeholder{
+                    color: $grey;
+                }
+                &.error{
+                    border: 3.5px solid $red;
+                }
+            }
+            input{
+                height: 50px;
+            }
         }
-        &.submit{
-            background-color: $yellow;
-            color: $black;
+        .item-required{
+            font-size: 12px;
+            margin-top: 10px;
+            span{
+                font-size: 12px;
+                color: $red;
+            }
+            &.complete{
+                color: $red;
+                display: none;
+            }
         }
-    }
-    a.back, a.submit{
-        display: block;
-        text-align: center;
-    }
-    textarea{
-        height: 100px;
+        .form-buttons{
+            padding-top: 10px;
+            a, .submit{
+                width: 100%;
+                padding: 10px;
+                font-family: $bold;
+                border: 3px solid $yellow;
+                border-radius: 10px;
+                margin: 10px 0;
+            }
+            a{
+                display: block;
+                text-align: center;
+                background-color: $black;
+                color: $yellow;
+            }
+            .submit{
+                background-color: $yellow;
+                color: $black;
+            }
+        }
     }
     .message{
         text-align: center;
         color: $white;
         width: 70%;
         margin: auto;
-        padding-bottom: 50px;
+        padding-top: 20px;
+        padding-bottom: 40px;
         .gracias{
             font-family: $extraBold;
             margin-bottom: 20px;
-            font-size: 34px;
+            font-size: 32px;
         }
         p{
-            font-size: 30px;
+            font-size: 28px;
+            line-height: 1.2;
         }
     }
 }
